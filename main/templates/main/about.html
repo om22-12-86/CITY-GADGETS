@@ -7,36 +7,97 @@
     <!-- Подключаем Font Awesome для иконок -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        .footer-contact {
-            padding: 20px;
-            background-color: #343a40;
-            color: white;
-        }
+    .footer-contact {
+        position: fixed;
+        bottom: -100px; /* Начальное положение футера вне экрана */
+        left: 0;
+        width: 100%;
+        background-color: #343a40;
+        color: white;
+        border-top: 3px solid #ffffff;
+        padding: 20px;
+        transition: bottom 0.3s ease; /* Плавный переход */
+        box-shadow: 0 -4px 8px rgba(0,0,0,0.3); /* Тень для футера */
+    }
 
-        .footer-contact h4 {
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
+    .footer-contact.show {
+        bottom: 0; /* Положение футера при наведении */
+    }
 
-        .contact-item {
-            margin-bottom: 10px;
-        }
+    .footer-contact:hover {
+        bottom: 0; /* Положение футера при наведении */
+    }
 
-        .contact-item a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 16px;
-        }
+    .footer-contact h4 {
+        margin-bottom: 15px;
+        font-size: 20px;
+        font-weight: bold;
+    }
 
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
+    .contact-item {
+        margin-bottom: 10px;
+    }
 
-        .contact-item i {
-            margin-right: 10px;
-            font-size: 18px;
-        }
-    </style>
+    .contact-item a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        display: flex;
+        align-items: center; /* Выравнивание иконок и текста по центру */
+    }
+
+    .contact-item a:hover {
+        text-decoration: underline;
+    }
+
+    .contact-item i {
+        margin-right: 10px; /* Увеличен отступ между иконкой и текстом */
+        font-size: 18px;
+    }
+
+    .content-container {
+        padding: 30px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin-top: 20px; /* Добавлен отступ сверху */
+    }
+
+    .content-container h2 {
+        font-size: 24px;
+        margin-bottom: 20px; /* Увеличен отступ снизу */
+        font-weight: bold;
+    }
+
+    .content-container p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px; /* Увеличен отступ снизу */
+    }
+
+    .quote {
+        font-size: 18px;
+        font-style: italic;
+        margin: 20px 0;
+        padding: 15px;
+        border-left: 6px solid #343a40; /* Увеличена толщина бордюра */
+        background-color: #e9ecef;
+        color: #343a40;
+        border-radius: 8px; /* Добавлен радиус скругления для цитаты */
+    }
+
+    .image-container {
+        text-align: center;
+        margin-top: 30px; /* Увеличен отступ сверху */
+    }
+
+    .image-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+</style>
+
 {% endblock %}
 
 {% block modal_cart %}
@@ -46,7 +107,7 @@
 {% block content %}
     <div class="container mt-5 pt-5">
         <div class="bg-white custom-shadow rounded p-4">
-            <h2 class="mb-3"><strong>CITY GADGETS B2-249</strong></h2>
+            <h2 class="mb-3"><strong>CITY GADGETS </strong></h2>
             <p class="mb-3">
                 Наш магазин занимается розничной продажей аксессуаров от известных мировых производителей с 2010 года. В нашем магазине представлены только лучшие аксессуары по самым привлекательным ценам. Мы только за оригинальный продукт Мировых Брендов.
             </p>
@@ -90,4 +151,21 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var footer = document.querySelector('.footer-contact');
+
+            // Показать футер при наведении на его область
+            footer.addEventListener('mouseover', function() {
+                footer.classList.add('show');
+            });
+
+            // Скрыть футер, если курсор уходит из области футера
+            footer.addEventListener('mouseleave', function() {
+                footer.classList.remove('show');
+            });
+        });
+    </script>
+
 {% endblock %}
