@@ -2,31 +2,121 @@
 
 {% load static %}
 
-
-
-
 {% block css %}
     <link rel="stylesheet" href="{% static 'deps/css/my_footer_css.css' %}">
+    <!-- Подключаем Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .footer-contact {
+            padding: 20px; /* Уменьшено отступы */
+            background-color: #343a40;
+            color: white;
+            border-top: 3px solid #ffffff;
+            position: relative; /* Добавлено для использования absolute */
+        }
+
+        .footer-contact h4 {
+            margin-bottom: 15px; /* Уменьшено расстояние */
+            font-size: 20px; /* Уменьшен размер шрифта */
+            font-weight: bold;
+        }
+
+        .contact-item {
+            margin-bottom: 10px; /* Уменьшено расстояние */
+        }
+
+        .contact-item a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px; /* Уменьшен размер шрифта */
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-item i {
+            margin-right: 8px; /* Уменьшено расстояние */
+            font-size: 18px; /* Уменьшен размер шрифта */
+        }
+
+        .content-container {
+            padding: 30px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .content-container h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .content-container p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .quote {
+            font-size: 18px;
+            font-style: italic;
+            margin: 20px 0;
+            padding: 10px;
+            border-left: 4px solid #343a40;
+            background-color: #e9ecef;
+            color: #343a40;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
 {% endblock %}
 
 {% block modal_cart %}
 {% include 'includes/cart_button.html' %}
-{%  endblock %}
+{% endblock %}
 
 {% block content %}
-    <div class="mt-5 pt-5 bg-white custom-shadow rounded">
-        <h2 class="m-2"><strong>Оплата наличными либо перевод</strong></h2>
-    <p class="m-2">Уважаемые клиенты, оплата производится согласно правилу знаменитого фильма:"Вечером деньги - утром стулья! Утром деньги - вечером стулья"!</p>
+    <div class="content-container mt-5 pt-5">
+        <h2><strong>Оплата наличными</strong></h2>
+        <p>Уважаемые клиенты, оплата производится согласно правилу знаменитого фильма:</p>
+        <div class="quote">
+            "Вечером деньги - утром стулья! Утром деньги - вечером стулья"
+        </div>
+        <!-- Пример с изображением -->
+        <div class="image-container">
+            <img src="{% static 'images/payment-methods.jpg' %}" alt="Методы оплаты">
+        </div>
     </div>
-
 {% endblock %}
 
 {% block footer %}
-    <footer class="py-4 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Top_CaseOm@gmail.com </p>
+    <footer class="footer-contact">
+        <div class="container text-center">
+            <h4>Наши контакты</h4>
+            <div class="contact-item">
+                <a href="tel:+79360012024">
+                    <i class="fas fa-phone-alt"></i> +7 (936) 001-20-24
+                </a>
+            </div>
+            <div class="contact-item">
+                <a href="https://t.me/DenchikB2249" target="_blank">
+                    <i class="fab fa-telegram-plane"></i> Telegram
+                </a>
+            </div>
+            <div class="contact-item">
+                <a href="mailto:topcaseom@gmail.com">
+                    <i class="fas fa-envelope"></i> topcaseom@gmail.com
+                </a>
+            </div>
         </div>
     </footer>
 {% endblock %}
-
-

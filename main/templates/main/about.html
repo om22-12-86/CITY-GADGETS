@@ -2,31 +2,92 @@
 
 {% load static %}
 
-
-
-
 {% block css %}
     <link rel="stylesheet" href="{% static 'deps/css/my_footer_css.css' %}">
+    <!-- Подключаем Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .footer-contact {
+            padding: 20px;
+            background-color: #343a40;
+            color: white;
+        }
+
+        .footer-contact h4 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .contact-item {
+            margin-bottom: 10px;
+        }
+
+        .contact-item a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-item i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+    </style>
 {% endblock %}
 
 {% block modal_cart %}
 {% include 'includes/cart_button.html' %}
-{%  endblock %}
+{% endblock %}
 
 {% block content %}
-    <div class="mt-5 pt-5 bg-white custom-shadow rounded">
-        <h2 class="m-2"><strong>TopCase B2-249</strong></h2>
-    <p class="m-2">Мы работаем для Вас!Только качественный и оригенальный продукт к Вашему вниманию!Качество и стиль для Лучших!</p>
+    <div class="container mt-5 pt-5">
+        <div class="bg-white custom-shadow rounded p-4">
+            <h2 class="mb-3"><strong>CITY GADGETS B2-249</strong></h2>
+            <p class="mb-3">
+                Наш магазин занимается розничной продажей аксессуаров от известных мировых производителей с 2010 года. В нашем магазине представлены только лучшие аксессуары по самым привлекательным ценам. Мы только за оригинальный продукт Мировых Брендов.
+            </p>
+            <p class="mb-3">
+                Мы гордимся тем, что предлагаем широкий ассортимент товаров, включая последние новинки и эксклюзивные предложения. Наши клиенты могут выбрать из огромного выбора аксессуаров, которые помогут сделать их устройства более функциональными и стильными. Мы постоянно обновляем наш ассортимент, чтобы удовлетворить самые разнообразные запросы и предпочтения.
+            </p>
+            <p class="mb-3">
+                Благодаря высокому качеству обслуживания и индивидуальному подходу к каждому клиенту, а также таким же выгодным ценам на весь представленный ассортимент, наш магазин завоевал большое количество постоянных клиентов. Мы ценим каждого покупателя и стремимся предоставить только лучший сервис на каждом этапе покупки.
+            </p>
+            <p class="mb-3">
+                Сделав заказ в нашем магазине, Вы точно остаетесь довольны: высоким уровнем обслуживания, скоростью оформления заказа, доступной ценой и качеством товара. Мы рады видеть Вас в числе наших постоянных клиентов. Мы работаем для Вас и стремимся к тому, чтобы каждый визит в наш магазин приносил только положительные эмоции!
+            </p>
+            <p>
+                Наши эксперты всегда готовы помочь вам с выбором и ответить на все ваши вопросы. Не стесняйтесь обращаться к нам за советом или консультацией — мы всегда готовы помочь вам сделать правильный выбор!
+            </p>
+            <p class="mt-4 font-weight-bold">
+                Ваш CITY GADGETS
+            </p>
+        </div>
     </div>
-
 {% endblock %}
 
 {% block footer %}
-    <footer class="py-4 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Top_CaseOm@gmail.com </p>
+    <footer class="footer-contact">
+        <div class="container text-center">
+            <h4>Наши контакты</h4>
+            <div class="contact-item">
+                <a href="tel:+79360012024">
+                    <i class="fas fa-phone-alt"></i> +7 (936) 001-20-24
+                </a>
+            </div>
+            <div class="contact-item">
+                <a href="https://t.me/DenchikB2249" target="_blank">
+                    <i class="fab fa-telegram-plane"></i> Telegram
+                </a>
+            </div>
+            <div class="contact-item">
+                <a href="mailto:topcaseom@gmail.com">
+                    <i class="fas fa-envelope"></i> topcaseom@gmail.com
+                </a>
+            </div>
         </div>
     </footer>
 {% endblock %}
-
-
