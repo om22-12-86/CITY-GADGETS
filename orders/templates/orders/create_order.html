@@ -77,16 +77,16 @@
                         </div>
                         <div class="col-md-12 mb-3">
                             <label class="form-label">Способ оплаты: </label>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="payment_on_get"
-                                    id="id_payment_on_get1" value="0" checked>
-                                <label class="form-check-label" for="id_payment_on_get">Оплата
-                                    картой</label>
-                            </div>
+<!--                            <div class="form-check form-check-inline">-->
+<!--                                <input class="form-check-input" type="radio" name="payment_on_get"-->
+<!--                                    id="id_payment_on_get1" value="0" checked>-->
+<!--&lt;!&ndash;                                <label class="form-check-label" for="id_payment_on_get">Оплата&ndash;&gt;-->
+<!--&lt;!&ndash;                                    картой</label>&ndash;&gt;-->
+<!--                            </div>-->
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="payment_on_get"
                                     id="id_payment_on_get2" value="1">
-                                <label class="form-check-label" for="id_payment_on_get">Наличными/картой
+                                <label class="form-check-label" for="id_payment_on_get">Наличными
                                     при плучении</label>
                                 {% if form.payment_on_get.errors %}
                                     <div class="alert alert-danger alert-dismissible fade show">{{form.payment_on_get.errors}}</div>
